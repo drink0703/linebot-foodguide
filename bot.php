@@ -27,7 +27,7 @@ foreach ($client->parseEvents() as $event) {
         case 'message':
             $message = $event['message'];
 
-            $json = file_get_contents('https://spreadsheets.google.com/feeds/list/2PACX-1vQuXJMSxKo9keJrPY37nHxCSXzlPdOVgzwHK-VnaXFIh244-95eealo1HwcY5Dy_XsRRiKUULOWVwXU/od6/public/values?alt=json');
+            $json = file_get_contents('https://spreadsheets.google.com/feeds/list/1JpQkC6LI0-f09emn11osToA66eoFJJFP7Gmh8ZaBOIU/od6/public/values?alt=json');
             $data = json_decode($json, true);
             $result = array();
 
