@@ -18,8 +18,8 @@
 
 require_once('line-bot-sdk-tiny/LINEBotTiny.php');
 
-$channelAccessToken = '<your channel access token>';
-$channelSecret = '<your channel secret>';
+$channelAccessToken = '8iI6qpZmG9WHsYoZOxD6oGbAd9ZMaLUm4oJwovhKFZNb3TnkSddgGZ0873Ai2WNzbeenBI4h1WrJy9FMhkn9rDUQ4ZjuiP6Dhhaa2K0+kob1XZwr2bKXcNoZmc4FzVnV15R031CpvM/0hVK04PyfTQdB04t89/1O/w1cDnyilFU=';
+$channelSecret = 'd8f52411c64d8d85df91c594a46a5bda';
 
 $client = new LINEBotTiny($channelAccessToken, $channelSecret);
 foreach ($client->parseEvents() as $event) {
@@ -37,14 +37,8 @@ foreach ($client->parseEvents() as $event) {
                 foreach ($keywords as $keyword) {
                     if (mb_strpos($message['text'], $keyword) !== false) {
                         $candidate = array(
-                            'thumbnailImageUrl' => $item['gsx$photourl']['$t'],
-                            'title' => $item['gsx$title']['$t'],
-                            'text' => $item['gsx$title']['$t'],
-                            'actions' => array(
-                                array(
-                                    'type' => 'uri',
-                                    'label' => '查看詳情',
-                                    'uri' => $item['gsx$url']['$t'],
+                                'type' => 'text',
+                                'text' => $item['gsx$content']['$t'],
                                     ),
                                 ),
                             );
@@ -62,7 +56,10 @@ foreach ($client->parseEvents() as $event) {
                                 'type' => 'text',
                                 'text' => $message['text'].'讓我想想喔…',
                             ),
-
+                            array(
+                                'type' => 'text',
+                                'text' => $result,
+                            ),
                             array(
                                 'type' => 'sticker',
                                 'packageId' => '1',
