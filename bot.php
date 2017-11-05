@@ -16,7 +16,7 @@
  * under the License.
  */
 
-require_once('line-bot-sdk-tiny/LINEBotTiny.php');
+require_once('LINEBotTiny.php');
 
 $channelAccessToken = '8iI6qpZmG9WHsYoZOxD6oGbAd9ZMaLUm4oJwovhKFZNb3TnkSddgGZ0873Ai2WNzbeenBI4h1WrJy9FMhkn9rDUQ4ZjuiP6Dhhaa2K0+kob1XZwr2bKXcNoZmc4FzVnV15R031CpvM/0hVK04PyfTQdB04t89/1O/w1cDnyilFU=';
 $channelSecret = 'd8f52411c64d8d85df91c594a46a5bda';
